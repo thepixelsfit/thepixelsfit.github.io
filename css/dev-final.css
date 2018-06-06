@@ -119,13 +119,13 @@ footer {
 
 	
 	
-}
+
 
 .background {
 	background-image:url(../images/shiplapbg.jpg);
 	
 	background-size:cover;
-	background-postion:fixed;
+	background-position:fixed;
 	background-repeat:no-repeat;
 	
 	
@@ -143,9 +143,9 @@ body, html {
   	background-color: #EEEEEE;
 
     /* Set a specific height */
-   height: 100px;
+   height: 115px;
 	width: 100%;
-	marging-right; 0px 0px;
+	marging-right: 0px 0px;
 	margin-top:0px;
 	margin-bottom: 15px;
 	
@@ -313,17 +313,20 @@ body, html {
 
 
 .amelist {
-	font-size: 18px;
+	font-size: 16px;
 	
 	margin-left: 0px;
-	padding: 5px;
-}
-
-
 	
 }
+
+
+
 
 h1 {
 	font-size: 24px;
 	text-align: center;
+}
 
+.img-circle {
+    border-radius: 50%;
+}
