@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	  
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/win2ition.css">
+	<!-- Icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link rel="shortcut icon" href="images/b-master-favicon.ico?crc=28238185"/>
+	  
+	 <!-- CAPTCHA script -->
+	 <script src="https://www.google.com/recaptcha/api.js"></script>
+	  
+  <title>Recipient Inquiry | Win2ition™</title>
+  </head>
+  <body>
+	  
+ 
+	
+	  
+	  <div class="main-background">
+	
+	<!--
+
+		  
+		  <div class="container form">
+	
+	<div class="form-group">
+		<form action="recipient-mailer.php" method="POST">
+      <label for="firstname">Your Name:</label>
+      <input type="text" class="form-control" id="firstname" placeholder="(First and Last)" name="firstname">
+	  </div>
+	
+	<div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="number" class="form-control" id="lastname" placeholder="Enter number" name="phone">
+	  </div>
+	<br>
+	
+	<div class="form-group">
+      <label for="lastname">Desired Apartment:</label>
+      <input type="text" class="form-control" id="email" placeholder="(Adair, Collier, Oakland, Piedmont)" name="lastname">
+	  </div>
+	
+	<div class="form-group">
+      <label for="email">Desired Move-in Date:</label>
+      <input type="email" class="form-control" id="phone" placeholder="DD/MM/YYYY" name="email">
+	  </div>
+	<br>
+	
+	
+	
+	<div class="form-group">
+      <label for="message">Other Information:</label>
+      <textarea rows="9" class="form-control" id="message" placeholder="..." name="message"
+				cols="30"></textarea>
+	  </div>
+	
+	<a href="thank-you-recipient.html"><button type="submit" class="btn btn-default center-block" name="submit">Submit</button></a>
+		
+		  
+		  
+		  
+		  
+		  
+<form action="recipient-mailer.php" method="POST">
+<p>Name</p> <input type="text" name="name">
+<p>Email</p> <input type="text" name="email">
+<p>Phone</p> <input type="text" name="phone">
+
+
+<br />
+<p>Message</p><textarea name="message" rows="6" cols="25"></textarea><br />
+<input type="submit" value="Submit">
+</form>
+		  -->	
+		  
+		  
+		  
+		  <div class="container formhead">
+			<h1 class="formhead">Recipient Inquiry</h1>
+		</div>
+		  
+		  <div class="container form">
+		
+			<form id="mail">
+				<div class="form-group formtext">
+					<label for="firstname">First name:</label> <input class="form-control" id="firstname" name="firstname" placeholder="First name" type="text" required>
+				</div>
+				<div class="form-group formtext">
+					<label for="lastname">Last name:</label> <input class="form-control" id="lastname" name="lastname" placeholder="Last name" type="text" required>
+				</div>
+				<div class="form-group formtext">
+					<label for="email">Email:</label> <input class="form-control" id="email" name="email" placeholder="Enter email" type="email" required>
+				</div><br>
+				<div class="form-group formtext">
+					<label for="phone">Mobile number:</label> <input class="form-control" id="phone" name="phone" placeholder="ex. 7705551234" type="number" required>
+				</div><br>
+				<div class="form-group formtext">
+					<label for="message">Please provide the reason for your interest in Win2ition:</label> 
+					<textarea class="form-control" cols="30" id="message" name="message" placeholder="..." rows="9" required></textarea>
+				</div>
+				
+				<div class="form-group formtext">
+					<label for="checkbox"><input type="checkbox" id="terms" name="terms" value="check" required> I have READ and AGREE to the Win2ition™ <a href="http://win2ition.org/Win2itionTerms.pdf" target="_blank">Terms</a> &
+		<a href="http://win2ition.org/Win2itionPrivacyPolicy.pdf" target="_blank">Privacy Policy</a></label>
+					</div>
+				
+				<br>
+				<div class="g-recaptcha" data-sitekey="6LfPWHkUAAAAAOw2yRC2uYuZ9AppKMv8Ozcijui2" required></div>
+				<br>
+				<div>
+					<input class="btn btn-default center-block" name="submit" type="submit"><br>
+					</div>
+				<br>
+				
+			</form>
+		  </div>
+		  <script>
+			$("#mail").submit(function(event) {
+				var ajaxRequest;
+				event.preventDefault();
+				var values = $(this).serialize();
+
+				$.ajax({
+					url: "recipient-mailer.php",
+					type: "post",
+					data: values
+				})
+				ajaxRequest.done(function (response, textStatus, jqXHR){
+					console.log(response);
+					console.log(textStatus);
+					//location.href = thank-you-recipient.html;
+				});
+
+				ajaxRequest.fail(function (){
+					//$("#result").html('There is error while submit');
+				});
+			});
+		  </script>
+				<!--
+		  <br>
+		  <div class="container formhead">
+			<h1 class="formhead">Recipient Inquiry</h1>
+		</div>
+		  <br>
+		  
+		                       <div id="wufoo-zf47aad15otitv">
+Fill out my <a href="https://thepixelshost.wufoo.com/forms/zf47aad15otitv">online form</a>.
+</div>
+
+<script type="text/javascript">var zf47aad15otitv;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'thepixelshost',
+'formHash':'zf47aad15otitv',
+'autoResize':true,
+'height':'625',
+'async':true,
+'host':'wufoo.com',
+'header':'hide',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { zf47aad15otitv = new WufooForm();zf47aad15otitv.initialize(options);zf47aad15otitv.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
+
+-->
+                                              
+	<br><br>
+		  <br><br>
+		  <br><br>
+	</div>
+	
+</body>
+</html>
